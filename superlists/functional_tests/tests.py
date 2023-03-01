@@ -75,7 +75,7 @@ class NewVisitorTest(LiveServerTestCase):
         self.browser = webdriver.Firefox()
         # Фрэнсис посещает домашнюю страницу. Нет никаких признаков списка Эдит
         self.browser.get(self.live_server_url)
-        page_text = self.browser.find_element_by_tag_name('body').text
+        page_text = self.browser.find_element('tag name','body').text
         self.assertNotIn('Купить павлиньи перья', page_text)
         self.assertNotIn('Сделать мушку', page_text)
         # Фрэнсис начинает новый список, вводя новый элемент. Он менее
