@@ -10,6 +10,7 @@ Obey the Testing Goat: Using Django, Selenium, and JavaScript
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![Generic badge](https://img.shields.io/badge/Made-Django4.1.6-<COLOR>.svg)](https://shields.io/)
 
+
 # Ультракороткие инструкции о том, как получить Linux-сервер
 
 Эти инструкции предназначены в качестве дополнения к
@@ -23,79 +24,47 @@ Obey the Testing Goat: Using Django, Selenium, and JavaScript
 
 ## 1.На странице выбрать VPS.
 ![](https://github.com/AfrosamuraiNo1/superlists/blob/master/foto_readme/photo_2023-03-19_09-28-17.jpg)
-## 2.В вкладке выбрать VPS.
+## 2.В вкладке выбрать VPS на Linux.
 ![](https://github.com/AfrosamuraiNo1/superlists/blob/master/foto_readme/photo_2023-03-19_09-28-12.jpg)
 ## 3.На странице заказываем base1 (самый простой сервер).
 ![](https://github.com/AfrosamuraiNo1/superlists/blob/master/foto_readme/photo_2023-03-19_09-28-06.jpg)
-## 3.Делаем как на фото и заказываем сервер.
-![](## 3.На странице заказываем base1 (самый простой сервер).
+## 4.Делаем как на фото и заказываем сервер.
 ![](https://github.com/AfrosamuraiNo1/superlists/blob/master/foto_readme/photo_2023-03-19_09-26-20.jpg)
 
-## Generate an SSH key
+## Создать ключ SSH.
 
-If you've never created one before, the command is
+Создайте ключ в командной строке.
 
 ```bash
 ssh-keygen
 ```
 
-**NOTE** *If you're on Windows, you need to be using Git-Bash for `ssh-keygen`
-and `ssh` to work. There's more info in the
-[installation instructions chapter](http://www.obeythetestinggoat.com/book/pre-requisite-installations.html)*
-
-Just accept all the defaults if you really want to just get started in a hurry,
-and no passphrase.
-
-Later on, you'll want to re-create a key with a passphrase for extra security,
-but that means you have to figure out how to save that passphrase in such a way
-that Fabric won't ask for it later, and I don't have time to write instructions
-for that now!
-
-Make a note of your "public key"
+Скопируйте ваш "public key"
 
 ```bash
 cat ~/.ssh/id_rsa.pub
 ```
-
-More info on public key authentication [here](https://www.linode.com/docs/networking/ssh/use-public-key-authentication-with-ssh/)
-and [here](https://www.digitalocean.com/community/tutorials/how-to-use-ssh-keys-with-digitalocean-droplets)
-
-
-## Start a Droplet
-
-A "droplet" is Digital Ocean's name for a server.  Pick the default Ubuntu,
-the cheapest type, and whichever region is closest to you. You won't need
-access to the ancillary services that are available (Block storage, a VPC
-network, IPv6, User-Data, Monitoring or Back-Ups)
-
-* Choose **New SSH Key** and upload your public key from above
-
-Make a note of your server's IP address once it's started
-
-
-## Log in for the first time
-
+## Подключение к виртуальному серверу.
 
 ```bash
-ssh root@your-server-ip-address-here
+ssh root@your-server-ip-address-here (ssh root@123.123.123.123)
 ```
 
-It should just magically find your SSH key and log you in without any
-need for a password.
-
-
-## Create a non-root user
+## Создать пользователя без прав root.
 
 ```bash
-useradd -m -s /bin/bash elspeth # add user named elspeth 
-# -m creates a home folder, -s sets elspeth to use bash by default
-usermod -a -G sudo elspeth # add elspeth to the sudoers group
-passwd elspeth # set password for elspeth
-su - elspeth # switch-user to being elspeth!
+useradd -m -s /bin/bash elspeth # Создать пользователя с именем elspeth 
+# -m созадает в домашней папке имя
+# -s Пользователь elspeth может пользоваться командами в командной строке не как администратор
+
+usermod -a -G sudo elspeth # Добавить elspeth в группу выполнения команд sudo
+passwd elspeth # Пароль elspeth
+
+su - elspeth # Начать пользоваться аккаунтом elspeth!
 ```
 
 
-## Add your public key to the non-root user as well.
+## Добавим публичный ключ для пользователя elspeth.
 
 * Copy your public key to your clipboard, and then
 
@@ -110,14 +79,14 @@ KEY
 HERE' >> ~/.ssh/authorized_keys
 ```
 
-Now verify you can SSH in as elspeth from your laptop
+Теперь можно напрямую заходить под от пользователя elspeth.
 
 
 ```bash
-ssh elspeth@your-server-ip-address-here
+ssh elspeth@your-server-ip-address-here (ssh root@123.123.123.123)
 ```
 
-Also check you can use "sudo" as elspeth
+Проверьте можете ли вы использовать комманду "sudo" пользователем elspeth. 
 
 ```bash
 sudo echo hi
@@ -158,3 +127,4 @@ the manual deployment chapter
 I literally threw these instructions together in 10 minutes flat, so I'm 
 sure they could do with improvements.  Please send in suggestions, typos,
 fixes, any common "gotchas" you ran into that you think I should mention.
+
