@@ -92,39 +92,8 @@ ssh elspeth@your-server-ip-address-here (ssh root@123.123.123.123)
 sudo echo hi
 ```
 
+## Как подключить домен к виртуальному сервеверу.
+В ссылке с паролями вам пришла ссылка для настройки сервера.
+Оснакомтесть с [инструкцией](https://help.reg.ru/support/servery-vps/oblachnyye-servery/rabota-s-serverom/kak-privyazat-domen-k-oblachnomu-serveru).
 
-## Map your domains to the server
-
-There's one more thing you need to do in the book, which
-is to map a domain name to your server's IP address.
-
-If you don't already own a domain name you can use (you don't
-have to use the *www.* subdomain, you could use *superlists.yourdomain.com*),
-then you'll need to get on from a "domain registrar".  There are loads
-out there, I quite like Gandi or the slightly-more-friendly (but
-no 2FA) 123-reg.
-
-If you want a free one there's [dot.tk](http://www.dot.tk).  Be aware
-that their business model is based on ads, so there will be ads
-all over your domain until you configure it.
-
-Once you have a domain, you need to set up a couple of **A-records** in
-its DNS configuration, one for your "staging" subdomain and one for your
-"live" subdomain.  Mine are *superlists.ottg.eu* and *superlists-staging.ottg.eu*
-for example.
-
-*(tip: DNS changes take time to propagate, so if your domain doesn't
-take you to the server straight away, you may need to wait.  Some registrars
-will let you control this using a setting called "TTL")*.
-
-
-And now you should be all set to follow the rest of the instructions in 
-the manual deployment chapter
-
-
-# Pull requests and suggestions accepted!
-
-I literally threw these instructions together in 10 minutes flat, so I'm 
-sure they could do with improvements.  Please send in suggestions, typos,
-fixes, any common "gotchas" you ran into that you think I should mention.
-
+Всем удачи. Пишите если что)
