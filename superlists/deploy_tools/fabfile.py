@@ -10,7 +10,7 @@ REPO_URL = 'https://github.com/AfrosamuraiNo1/superlists' #Может потре
 def deploy():
     '''развернуть'''
     
-    site_folder = f'home/{env.user}/sites/{env.host}' #env.host будет содержать адрес сервера, который мы указали в командной строке, например superlists.ottg.eu.
+    site_folder = f'/home/{env.user}/sites/{env.host}' #env.host будет содержать адрес сервера, который мы указали в командной строке, например superlists.ottg.eu.
                                                        #env.user будет содержать имя пользователя, которое вы используете для входа на сервер.    
     source_folder = site_folder + '/source'
     _create_directory_structure_if_necessary(site_folder)
