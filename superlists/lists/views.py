@@ -8,6 +8,7 @@ def home_page(request):
     '''домашняя страница'''
     return render(request, 'home.html')
 
+@csrf_exempt
 def view_list(request, list_id):
     '''представление списка'''
     list_ = List.objects.get(id=list_id)
@@ -17,7 +18,7 @@ def view_list(request, list_id):
             item = Item(text=request.POST['item_text'], list=list_)
             item.full_clean()
             item.save()
-            return redirect(f'/lists/{list_.id}/')
+            return redirect(list_)
         except ValidationError:
             error = "You can't have an empty list item"
     return render(request, 'list.html', {'list': list_, 'error': error})
@@ -34,7 +35,7 @@ def new_list(request):
         list_.delete()
         error = "You can't have an empty list item"
         return render(request, 'home.html', {"error": error})
-    return redirect(f'/lists/{list_.id}/')
+    return redirect(list_)
 
 # @csrf_exempt
 # def add_item(request, list_id):
