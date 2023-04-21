@@ -20,5 +20,5 @@ from lists import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home_page, name='home'),
-    path('lists/new', views.new_list, name='new_list'),
-    re_path(r'^lists/(\d+)/$', views.view_list, name='view_list'),]
+    path('lists/new', views.new_list, name='new_list'), #Ошибка (r'^new$', views.new_list, name='new_list')
+    re_path(r'^lists/(\d+)/$', views.view_list, name='view_list'),] #Ошибка (r'^(\d+)/$', views.view_list, name='view_list')

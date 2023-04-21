@@ -15,7 +15,6 @@ class NewVisitorTest(FunctionalTest):
         # списках неотложных дел
         self.assertIn('To-Do', self.browser.title)
         header_text = self.browser.find_element('tag name','h1').text
-        print(header_text)
         self.assertIn('To-Do', header_text)
         # Ей сразу же предлагается ввести элемент списка
         inputbox = self.browser.find_element('id','id_new_item')
