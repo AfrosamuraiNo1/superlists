@@ -22,7 +22,7 @@ Obey the Testing Goat: Using Django, Selenium, and JavaScript
 Я переписал инструкцию используя другую платформу [REG.ru](https://www.reg.ru/domain/new/?rlink=reflink-11142889 ). 
 Выбрал этот сервис так как я сним заочно знаком и мне он показался простым и не кусачим по цифрам, вот [моя реферальная ссылка](https://www.reg.ru/domain/new/?rlink=reflink-11142889 ) Мне будет приятно если вы зарегистрируетесь по ней, таким образом поможете моему проекту. Так же можете воспользоваться моей скидкой 5% на nokynky B4D0-C80D-D436-581B (Промо код).
 
-## 1.На странице выбрать VPS.
+## 1.На странице выбрать VPS!
 ![](https://github.com/AfrosamuraiNo1/superlists/blob/master/foto_readme/photo_2023-03-19_09-28-17.jpg)
 ## 2.В вкладке выбрать VPS на Linux.
 ![](https://github.com/AfrosamuraiNo1/superlists/blob/master/foto_readme/photo_2023-03-19_09-28-12.jpg)
